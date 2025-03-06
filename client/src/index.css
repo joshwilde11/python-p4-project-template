@@ -1,7 +1,182 @@
 :root {
-  --bg: #282c34;
+  --bg: #000000; /* Black background for the body */
   --header: #fff;
   --link: #61dafb;
-  --text: hsla(0, 0%, 100%, 0.88);
+  --text: #000080; /* Navy blue text */
+  --container-bg: #f5f5a6; /* Yellow background for the container */
+  --button-text: #f5f5a6; /* Text color for the button */
+  --h2-bg: #000080; /* Navy blue background for h2 */
+  --h2-text: #f5f5a6; /* Yellow text for h2 */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 375px; /* iPhone screen width */
+  margin: 0 auto; /* Center the content */
+  padding: 16px; /* Add some padding */
+  background-color: var(--container-bg); /* Yellow background */
+  position: relative;
+  z-index: 1;
+}
+
+.container.login-container {
+  min-height: 100vh; /* Ensure the container takes up at least the full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center; /* Center the content horizontally */
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/images/vegground.png');
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: center;
+  opacity: 0.15; /* Adjust the opacity to make it faint */
+  z-index: -1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 16px; /* Add some space below the header */
+}
+
+.show-recipes-button {
+  margin-left: auto;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #000080;
+  color: var(--button-text);
+  border: none;
+  border-radius: 4px;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header img {
+  cursor: pointer;
+  width: 24px; /* Adjust as needed */
+  height: 24px; /* Adjust as needed */
+}
+
+h2 {
+  width: 100%;
+  background-color: var(--h2-bg); /* Navy blue background */
+  color: var(--h2-text); /* Yellow text */
+  padding: 8px 0; /* Add some padding */
+  text-align: center; /* Center the text */
+  border-radius: 8px; /* Round the edges */
+}
+
+.grocery-store-card {
+  background-color: #fff; /* White background */
+  border: none; /* No visible border */
+  border-radius: 8px; /* Round the edges */
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: calc(50% - 20px); /* Two cards per row, accounting for margin */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure space between elements */
+}
+
+.grocery-store-card.clickable {
+  cursor: pointer;
+}
+
+.grocery-store-logo {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  margin: 0 auto; /* Center the logo */
+}
+
+.store-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ensure space between cards */
+}
+
+.recipe-card {
+  background-color: #fff; /* White background */
+  border: none; /* No visible border */
+  border-radius: 8px; /* Round the edges */
+  padding: 16px;
+  margin: 8px;
+  text-align: center;
+  width: 100%; /* Take up the full width of the container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.recipe-image {
+  width: 100%; /* Adjust as needed */
+  height: auto;
+  border-radius: 8px; /* Round the corners of the images */
+}
+
+.recipe-ingredients {
+  white-space: pre-wrap;
+}
+
+.recipe-steps p {
+  margin: 0;
+}
+
+h3 {
+  margin: 10px 0 0 0; /* Adjust as needed */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center; /* Center the text */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login-form button {
+  padding: 8px 16px;
+  background-color: #000080;
+  color: var(--button-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
